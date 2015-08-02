@@ -3,6 +3,7 @@
 <head>
     <script src="angular.js"></script>
     <script src="script.js"></script>
+    <script src="services/github.js"></script>
     <title>Search on Github</title>
 </head>
 
@@ -17,20 +18,7 @@
         </form>
     </div>
 
-    <h2>{{ error }} </h2>
-
-    <div>
-        Name: {{ person.name }}
-    </div>
-    <div>
-        Email: {{ person.email }}
-    </div>
-    <div>
-        Location: {{ person.location }}
-    </div>
-    <div>
-        <img ng-src="{{person.avatar_url}}/&size=100"/>
-    </div>
+    <div ng-include="'userdetails.html'" ng-show="user"></div>
 </div>
 </body>
 

@@ -1,0 +1,38 @@
+<h2>{{ error }} </h2>
+
+<div>
+    Name: {{ user.name }}
+</div>
+<div>
+    Email: {{ user.email }}
+</div>
+<div>
+    Location: {{ user.location }}
+</div>
+<br>
+
+<h1>Repositories:</h1>
+<select ng-model="reposSortOrder">
+    <option value="+name">Name asc</option>
+    <option value="-name">Name desc</option>
+    <option value="+language">Language asc</option>
+    <option value="-language">Language desc</option>
+    <option value="+stargazers_count">Stars asc</option>
+    <option value="-stargazers_count">Stars desc</option>
+</select>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Stars</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="repo in repos | orderBy:reposSortOrder">
+        <td>{{ repo.name }}</td>
+        <td>{{ repo.language }}</td>
+        <td>{{ repo.stargazers_count }}</td>
+    </tr>
+    </tbody>
+</table>
