@@ -2,24 +2,18 @@
 <html ng-app="githubUsers">
 <head>
     <script src="angular.js"></script>
-    <script src="script.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="MainController.js"></script>
+    <script src="UserController.js"></script>
     <script src="services/github.js"></script>
     <title>Search on Github</title>
 </head>
 
 <body>
-<div ng-controller="MainController">
-    <h1>{{ message }}</h1>
+<h1>Search Github Users</h1>
 
-    <div>
-        <form name="searchUser" ng-submit="search(username)">
-            <input type="name" placeholder="Search user name" ng-model="username" required>
-            <input type="submit" value="search">
-        </form>
-    </div>
-
-    <div ng-include="'userdetails.html'" ng-show="user"></div>
-</div>
+<div ng-view></div>
 </body>
 
 </html>
